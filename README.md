@@ -6,9 +6,7 @@ The current ponyc package installed via pacman is not compatible with
 LLVM5 and fails, see Arch Linux bug
 [55170](https://bugs.archlinux.org/task/55170) archlinux bug.
 It is also not possible to build ponyc from source for
-the same reason.
-
-[Issue 2303](https://github.com/ponylang/ponyc/pull/2303)
+the same reason. [Issue 2303](https://github.com/ponylang/ponyc/pull/2303)
 is tracking the problem.
 
 This was based on a guide from
@@ -17,7 +15,21 @@ and in particular the
 [comment from Hi-Angel](http://nemrod.se/guides/install-rpm-packages-on-arch-linux/#comment-183470)
 in January 2017.
 
-## Usage
+## Pony install using ponyc-rpm
+### Prerequisites: `git` and `rpmextract`
+```
+sudo pacman -Syu git rpmextract
+```
+### Instructions:
+Clone the repo, change directory to the repo, run `makepkg -si`
+or use your favorite AUR package manager.
+```
+git clone https://github.com/winksaville/ponyc-rpm
+cd ponyc-rpm
+makepkg -si
+```
+
+## Ponyc Usage
 You must pass the `--pic` parameter to ponyc on Arch Linux
 ```
 ponyc --pic
