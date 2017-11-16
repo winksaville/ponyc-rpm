@@ -7,6 +7,7 @@ pkgbase = ponyc-rpm
 	license = BSD
 	depends = zlib
 	depends = ncurses5-compat-libs
+	provides = ponyc=0.20.0
 	conflicts = ponyc
 	source = https://dl.bintray.com/pony-language/ponyc-rpm/ponyc-0.20.0-4003.0b2a2d2.x86_64.rpm
 	md5sums = dd4433d3f7188accc73ff1d3eabfcf20
