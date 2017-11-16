@@ -15,18 +15,35 @@ and in particular the
 [comment from Hi-Angel](http://nemrod.se/guides/install-rpm-packages-on-arch-linux/#comment-183470)
 in January 2017.
 
-## Pony install using ponyc-rpm
-### Prerequisites: `git` and `rpmextract`
+## Pony install/uninstall using ponyc-rpm
+### Prerequisites: `git` `zlib` `ncurses5-compat-libs`
+
+Install `git` and `zlib` using pacman:
 ```
-sudo pacman -Syu git rpmextract
+sudo pacman -Syu git zlib
 ```
-### Instructions:
+
+Install AUR package [`ncurses5-compat-libs`](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
+manually by cloning its git repo, install the gpg see using `gpg --recv-keys <KEYID - See 'validpgpkeys' in PKGBUILD>, use makepkg to install. For example:
+```
+git clone https://aur.archlinux.org/ncurses5-compat-libs.git
+cd ncurses5-compat-libs
+gpg --recv-keys C52048C0C0748FEE227D47A2702353E0F7E48EDB
+makepkg -si
+```
+
+### Install:
 Clone the repo, change directory to the repo, run `makepkg -si`
 or use your favorite AUR package manager.
 ```
 git clone https://github.com/winksaville/ponyc-rpm
 cd ponyc-rpm
 makepkg -si
+```
+
+### Uninstall:
+```
+sudo pacman -Rs ponyc-rpm
 ```
 
 ## Ponyc Usage
