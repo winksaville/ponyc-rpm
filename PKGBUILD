@@ -8,6 +8,7 @@ arch=('x86_64')
 url="http://www.ponylang.org/"
 license=('BSD')
 depends=('zlib' 'ncurses5-compat-libs')
+conflicts=('ponyc')
 source=("https://dl.bintray.com/pony-language/ponyc-rpm/ponyc-${pkgver//_/-}.$CARCH.rpm")
 md5sums=('dd4433d3f7188accc73ff1d3eabfcf20')
 
